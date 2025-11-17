@@ -7,7 +7,7 @@ import androidx.navigation.navigation
 import cz.quanti.spacex.app.Graph
 import kotlinx.serialization.Serializable
 
-private interface Rockets {
+private sealed interface Rockets {
     @Serializable
     data object RocketsList
 

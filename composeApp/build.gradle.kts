@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 kotlin {
@@ -49,6 +50,8 @@ kotlin {
             implementation(libs.bundles.ktor)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.jetbrains.compose.navigation)
+            implementation("io.github.aakira:napier:2.7.1")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

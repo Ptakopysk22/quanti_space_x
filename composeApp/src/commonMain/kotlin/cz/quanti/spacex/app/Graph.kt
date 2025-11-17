@@ -2,7 +2,7 @@ package cz.quanti.spacex.app
 
 import kotlinx.serialization.Serializable
 
-interface Graph {
+sealed interface Graph {
     @Serializable
     data object Rockets : Graph
 
