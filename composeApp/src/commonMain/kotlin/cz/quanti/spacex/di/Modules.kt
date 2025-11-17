@@ -7,7 +7,6 @@ import cz.quanti.spacex.features.rockets.data.repository.DefaultRocketRepository
 import cz.quanti.spacex.features.rockets.domain.repository.RocketRepository
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
-import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
