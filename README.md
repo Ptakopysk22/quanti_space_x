@@ -1,65 +1,35 @@
-# Mobile Assignment
+This is a Kotlin Multiplatform project targeting Android, iOS.
 
-| Rocket list  | Rocket detail | Rocket before launch | Rocket after launch |
-| ------------- | ------------- | ------------- | ------------- |
-| ![Rocket List](./Screens/Rocket%20List.png?raw=true)  | ![Rocket detail](./Screens/Rocket%20Detail.png?raw=true)  | ![Rocket before launch](./Screens/Rocket%20Launch%20-%20Before.png?raw=true) | ![Rocket after launch](./Screens/Rocket%20Launch%20-%20After.png?raw=true) |
+* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
+  It contains several subfolders:
+  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
+  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
+    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
+    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
+    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
+    folder is the appropriate location.
 
+* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
+  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-## 🇨🇿 Zadání mobilní aplikace
-SpaceX mobilní aplikace pro Quanti náborový proces
+### Build and Run Android Application
 
-### Zadání
-Cílem je vytvořit aplikaci, která zobrazí seznam všech SpaceX raket. Aplikace bude mít celkem 3 obrazovky. 
+To build and run the development version of the Android app, use the run configuration from the run widget
+in your IDE’s toolbar or build it directly from the terminal:
+- on macOS/Linux
+  ```shell
+  ./gradlew :composeApp:assembleDebug
+  ```
+- on Windows
+  ```shell
+  .\gradlew.bat :composeApp:assembleDebug
+  ```
 
-1. Seznam všech raket
-2. Detail rakety
-3. Simulátor letu
+### Build and Run iOS Application
 
- * Aplikace je napojena na [API SpaceX](https://docs.spacexdata.com). 
- * Grafické podklady jsou v tomto repozitáři
- * Co se týká závislostí, tak použijte ty, které Vám davájí smysl, jiny limit není
- * Vypracovaní by nemělo zabrat déle než týden práce
- * Průběžne commitujte do vašeho forku od tohoto repozitáře
- * Pokud umíte tak využijte principy FRP 
+To build and run the development version of the iOS app, use the run configuration from the run widget
+in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
 
-#### Seznam všech raket
-Tato obrazovka je poměrně jasná ze grafického návrhu 
+---
 
-#### Detail rakety
-Jo a tato taky :) 
-
-#### Simulátor letu
-Tady je trochu více záludná. Je zde potřeba implementovat na gyroskop / akcelerometr zařízení. Pokud je telefon v leže, tak je raketa připravena ke startu. Pokud dojde k jeho zvednutí, respektive naklonění tak raketa odstartuje a proletí přes displej telefonu. 
-
-### Odevzdání
-Vytvořte si fork tohoto repozitáře a následně až budete mít hotovo tak nám udělte do něj přístup. 
-
-## 🇬🇧 Mobile Assignment
-SpaceX mobile app for Quanti recruitment process
-
-### Assignment
-The goal is to create an app that displays a list of all SpaceX rockets. The app will have a total of 3 screens. 
-
-1. List of all rockets
-2. Rocket detail
-3. Flight Simulator
-
- * The application is connected to the [SpaceX API](https://docs.spacexdata.com). 
- * The graphics are in this repository
- * As for dependencies, use the ones that make sense to you, there is no other limit
- * It shouldn't take more than a week to develop
- * Commit continuously to your fork from this repository
- * Use FRP principles if you can 
-
-#### List of all rockets
-This screen is fairly clear from the graphic design 
-
-#### Rocket detail
-Oh, and this one too :) 
-
-#### Flight Simulator
-Here's a bit more tricky. There is a need to implement the gyro/accelerometer device. If the phone is lying down, the rocket is ready to launch. If it is lifted or tilted the rocket will take off and fly through the phone's display. 
-
-### Submission
-Create a fork of this repository and then give us access to it when you are done. 
-
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
