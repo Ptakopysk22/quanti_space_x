@@ -21,8 +21,8 @@ sealed interface UiText {
 
     fun asPlainString(): String {
         return when (this) {
-            is UiText.DynamicString -> value
-            is UiText.StringResourceId -> id.key
+            is DynamicString -> value
+            is StringResourceId -> id.key
         }
     }
 }

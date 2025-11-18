@@ -54,6 +54,7 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
+            implementation(libs.kamel.image.default)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

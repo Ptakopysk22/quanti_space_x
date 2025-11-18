@@ -5,6 +5,7 @@ import cz.quanti.spacex.features.rockets.data.network.KtorRemoteRocketDataSource
 import cz.quanti.spacex.features.rockets.data.network.RemoteRocketDataSource
 import cz.quanti.spacex.features.rockets.data.repository.DefaultRocketRepository
 import cz.quanti.spacex.features.rockets.domain.repository.RocketRepository
+import cz.quanti.spacex.features.rockets.presentation.rocketDetail.RocketDetailViewModel
 import cz.quanti.spacex.features.rockets.presentation.rocketList.RocketListViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
@@ -21,5 +22,6 @@ val sharedModule = module {
     singleOf(::DefaultRocketRepository).bind<RocketRepository>()
 
     viewModelOf(::RocketListViewModel)
+    viewModelOf(::RocketDetailViewModel)
 
 }
