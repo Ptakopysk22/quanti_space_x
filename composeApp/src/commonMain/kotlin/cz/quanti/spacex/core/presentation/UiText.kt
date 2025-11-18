@@ -18,4 +18,11 @@ sealed interface UiText {
             is StringResourceId -> stringResource(resource = id, formatArgs = args)
         }
     }
+
+    fun asPlainString(): String {
+        return when (this) {
+            is UiText.DynamicString -> value
+            is UiText.StringResourceId -> id.key
+        }
+    }
 }
