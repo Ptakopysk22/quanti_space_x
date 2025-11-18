@@ -10,11 +10,13 @@ class FakeRocketRepository : RocketRepository {
 
     var rocketsResult: Result<List<Rocket>, DataError.Remote>? = null
 
+    var rocketResult: Result<RocketDetail, DataError.Remote>? = null
+
     override suspend fun getAllRockets(): Result<List<Rocket>, DataError.Remote> {
         return rocketsResult ?: error("rocketsResult not set")
     }
 
     override suspend fun getRocketById(id: String): Result<RocketDetail, DataError.Remote> {
-        error("Not needed for this test")
+       return rocketResult ?: error("rocketResult not set")
     }
 }
