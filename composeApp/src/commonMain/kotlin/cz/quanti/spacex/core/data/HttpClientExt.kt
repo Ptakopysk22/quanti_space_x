@@ -9,6 +9,7 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
+import kotlinx.io.IOException
 
 
 suspend inline fun <reified T> safeCall(
@@ -19,6 +20,8 @@ suspend inline fun <reified T> safeCall(
     } catch (e: SocketTimeoutException) {
         return Result.Error(DataError.Remote.REQUEST_TIMEOUT)
     } catch (e: UnresolvedAddressException) {
+        return Result.Error(DataError.Remote.NO_INTERNET)
+    } catch (e: IOException) {
         return Result.Error(DataError.Remote.NO_INTERNET)
     } catch (e: Exception) {
         currentCoroutineContext().ensureActive()

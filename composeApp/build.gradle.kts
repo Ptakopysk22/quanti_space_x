@@ -50,8 +50,10 @@ kotlin {
             implementation(libs.bundles.ktor)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.jetbrains.compose.navigation)
-            implementation("io.github.aakira:napier:2.7.1")
-            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
+            implementation(libs.napier)
+            implementation(libs.kotlinx.datetime)
+            implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

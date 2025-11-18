@@ -5,6 +5,7 @@ import androidx.compose.runtime.*
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import cz.quanti.spacex.core.presentation.materialTheme.lightColorSchema
 import cz.quanti.spacex.features.rockets.presentation.rockets
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
@@ -21,7 +22,7 @@ fun App(
     }
     
         MaterialTheme(
-            //colorScheme = lightColorSchema,
+            colorScheme = lightColorSchema,
         ) {
             NavHost(
                 navController = navController,

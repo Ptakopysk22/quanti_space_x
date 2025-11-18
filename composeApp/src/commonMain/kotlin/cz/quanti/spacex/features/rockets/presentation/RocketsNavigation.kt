@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import cz.quanti.spacex.app.Graph
+import cz.quanti.spacex.features.rockets.presentation.rocketList.RocketListRoute
 import kotlinx.serialization.Serializable
 
 private sealed interface Rockets {
@@ -20,7 +21,6 @@ private sealed interface Rockets {
 
 
 
-
 fun NavGraphBuilder.rockets(
     navController: NavController,
 ) {
@@ -28,7 +28,9 @@ fun NavGraphBuilder.rockets(
         startDestination = Rockets.RocketsList,
     ) {
         composable<Rockets.RocketsList> {
-
+            RocketListRoute(
+                onRocketClick = {},
+            )
         }
     }
 }
