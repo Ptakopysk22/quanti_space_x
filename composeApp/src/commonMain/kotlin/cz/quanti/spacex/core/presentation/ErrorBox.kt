@@ -14,11 +14,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import coil3.annotation.ExperimentalCoilApi
 import coil3.compose.AsyncImage
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import quanti_space_x.composeapp.generated.resources.Res
 import quanti_space_x.composeapp.generated.resources.description_rocket_error
 
+@OptIn(ExperimentalCoilApi::class, ExperimentalResourceApi::class)
 @Composable
 fun ErrorBox(
     error: UiText? = null,

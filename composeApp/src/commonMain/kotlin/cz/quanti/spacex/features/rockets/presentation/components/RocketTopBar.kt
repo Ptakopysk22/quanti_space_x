@@ -73,7 +73,7 @@ fun RocketTopBar(
             navigationIconContentColor = MaterialTheme.colorScheme.secondary,
             titleContentColor = MaterialTheme.colorScheme.onSurface,
             actionIconContentColor = MaterialTheme.colorScheme.secondary,
-            subtitleContentColor = MaterialTheme.colorScheme.onSurface
+            //subtitleContentColor = MaterialTheme.colorScheme.onSurface
         )
     )
 }

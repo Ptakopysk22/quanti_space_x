@@ -9,7 +9,7 @@ import quanti_space_x.composeapp.generated.resources.unknown_date
 @Composable
 fun formatDate(localDate: LocalDate?): String {
     val format = LocalDate.Format {
-        day()
+        dayOfMonth()
         chars(".")
         monthNumber()
         chars(".")

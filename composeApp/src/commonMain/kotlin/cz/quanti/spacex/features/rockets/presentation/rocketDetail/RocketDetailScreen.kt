@@ -33,6 +33,7 @@ import quanti_space_x.composeapp.generated.resources.parameters
 import quanti_space_x.composeapp.generated.resources.photos
 import quanti_space_x.composeapp.generated.resources.rockets
 import quanti_space_x.composeapp.generated.resources.unknown_rocket
+import kotlin.math.round
 import kotlin.math.roundToInt
 
 @Composable
@@ -94,6 +95,11 @@ private fun RocketDetailScreen(
             is RocketDetailState.Success -> {
                 val rocket = state.rocket
                 val massT = rocket.massKg?.let { it / 1000 }
+                fun Double.toOneDecimal(): String {
+                    val value = round(this * 10) / 10
+                    return value.toString()
+                }
+
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
@@ -128,7 +134,7 @@ private fun RocketDetailScreen(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             ParameterBox(
-                                value = rocket.diameterMeters.toString(),
+                                value = rocket.diameterMeters?.toOneDecimal() ?: "",
                                 unit = "m",
                                 description = stringResource(Res.string.diameter),
                                 modifier = Modifier.weight(1f)
