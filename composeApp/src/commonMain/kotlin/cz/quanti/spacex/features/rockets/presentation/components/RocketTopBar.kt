@@ -20,14 +20,15 @@ import org.jetbrains.compose.resources.stringResource
 import quanti_space_x.composeapp.generated.resources.Res
 import quanti_space_x.composeapp.generated.resources.description_back
 import quanti_space_x.composeapp.generated.resources.launch
-import quanti_space_x.composeapp.generated.resources.rockets
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RocketTopBar(
     title: String,
     onBackClick: () -> Unit,
+    backClickText: String,
     onLaunchClick: () -> Unit,
+    isLaunchVisible: Boolean,
     modifier: Modifier = Modifier
 ) {
     CenterAlignedTopAppBar(
@@ -43,22 +44,28 @@ fun RocketTopBar(
                     contentDescription = stringResource(Res.string.description_back),
                 )
                 Text(
-                    text = stringResource(Res.string.rockets),
+                    text = backClickText,
                 )
             }
         },
         title = {
-            Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
         },
         actions = {
-            Text(
-                text = stringResource(Res.string.launch),
-                modifier = Modifier
-                    .padding(end = 8.dp)
-                    .clickable { onLaunchClick() },
-                color = MaterialTheme.colorScheme.secondary,
-                style = MaterialTheme.typography.titleMedium
-            )
+            if (isLaunchVisible) {
+                Text(
+                    text = stringResource(Res.string.launch),
+                    modifier = Modifier
+                        .padding(end = 8.dp)
+                        .clickable { onLaunchClick() },
+                    color = MaterialTheme.colorScheme.secondary,
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
         },
         colors = TopAppBarColors(
             containerColor = MaterialTheme.colorScheme.surface,

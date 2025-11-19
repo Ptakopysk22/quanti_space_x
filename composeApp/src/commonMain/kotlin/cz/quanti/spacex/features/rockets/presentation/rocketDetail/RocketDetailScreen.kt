@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import cz.quanti.spacex.core.presentation.ErrorBox
 import cz.quanti.spacex.core.presentation.ProgressIndicator
-import cz.quanti.spacex.features.rockets.domain.model.Rocket
 import cz.quanti.spacex.features.rockets.presentation.components.RocketImage
 import cz.quanti.spacex.features.rockets.presentation.components.RocketTopBar
 import cz.quanti.spacex.features.rockets.presentation.components.SubtitleRow
@@ -32,12 +31,13 @@ import quanti_space_x.composeapp.generated.resources.mass
 import quanti_space_x.composeapp.generated.resources.overview
 import quanti_space_x.composeapp.generated.resources.parameters
 import quanti_space_x.composeapp.generated.resources.photos
+import quanti_space_x.composeapp.generated.resources.rockets
 import quanti_space_x.composeapp.generated.resources.unknown_rocket
 import kotlin.math.roundToInt
 
 @Composable
 fun RocketDetailRoute(
-    onLaunchClick: (Rocket) -> Unit,
+    onLaunchClick: (String) -> Unit,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: RocketDetailViewModel,
@@ -57,7 +57,7 @@ fun RocketDetailRoute(
 private fun RocketDetailScreen(
     state: RocketDetailState,
     modifier: Modifier = Modifier,
-    onLaunchClick: (Rocket) -> Unit,
+    onLaunchClick: (String) -> Unit,
     onBackClick: () -> Unit,
 ) {
     Scaffold(
@@ -65,7 +65,13 @@ private fun RocketDetailScreen(
         topBar = {
             RocketTopBar(
                 onBackClick = onBackClick,
-                onLaunchClick = {},
+                backClickText = stringResource(Res.string.rockets),
+                onLaunchClick = {
+                    if (state is RocketDetailState.Success) {
+                        onLaunchClick(state.rocket.name)
+                    }
+                },
+                isLaunchVisible = state is RocketDetailState.Success,
                 title = if (state is RocketDetailState.Success) {
                     state.rocket.name
                 } else {

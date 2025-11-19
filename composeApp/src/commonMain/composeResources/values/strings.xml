@@ -12,7 +12,9 @@
     <string name="description_rocket_icon">Rocket error</string>
     <string name="description_rocket_detail">Rocket detail</string>
     <string name="description_back">Back</string>
-    <string name="rocket_image">Rocket image</string>
+    <string name="description_rocket_flying">Rocket flying</string>
+    <string name="description_rocket_on_ground">Rocket on ground</string>
+    <string name="description_rocket_image">Rocket image</string>
 
     <string name="unknown_date">Unknown date</string>
     <string name="unknown_rocket">Unknown rocket</string>
@@ -32,6 +34,9 @@
     <string name="first_stage">First Stage</string>
     <string name="second_stage">Second Stage</string>
     <string name="unknown_stage">Unknown Stage</string>
+
+    <string name="launch_before_start_description">Move your phone up to launch the rocket</string>
+    <string name="launch_successful">Launch successful!</string>
 
     <string name="first_flight_format">First flight: %1$s</string>
     <string name="engines_format">%1$s engines</string>

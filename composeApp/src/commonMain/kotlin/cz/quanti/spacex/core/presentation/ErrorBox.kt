@@ -20,7 +20,13 @@ import quanti_space_x.composeapp.generated.resources.Res
 import quanti_space_x.composeapp.generated.resources.description_rocket_error
 
 @Composable
-fun ErrorBox(error: UiText, modifier: Modifier = Modifier) {
+fun ErrorBox(
+    error: UiText? = null,
+    errorText: String? = null,
+    modifier: Modifier = Modifier
+) {
+    val text: String = (error?.asString()?: errorText ?: "")
+
     Box(
         modifier = modifier
             .fillMaxSize(),
@@ -39,7 +45,7 @@ fun ErrorBox(error: UiText, modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = error.asString(),
+                    text = text,
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colorScheme.error,
                     style = MaterialTheme.typography.titleLarge

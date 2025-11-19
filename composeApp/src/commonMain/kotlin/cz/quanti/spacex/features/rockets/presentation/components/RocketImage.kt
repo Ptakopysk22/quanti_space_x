@@ -18,8 +18,8 @@ import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import org.jetbrains.compose.resources.stringResource
 import quanti_space_x.composeapp.generated.resources.Res
+import quanti_space_x.composeapp.generated.resources.description_rocket_image
 import quanti_space_x.composeapp.generated.resources.error_loading_image
-import quanti_space_x.composeapp.generated.resources.rocket_image
 
 @Composable
 fun RocketImage(url: String, modifier: Modifier = Modifier) {
@@ -27,7 +27,7 @@ fun RocketImage(url: String, modifier: Modifier = Modifier) {
         resource = {
             asyncPainterResource(url)
         },
-        contentDescription = stringResource(Res.string.rocket_image),
+        contentDescription = stringResource(Res.string.description_rocket_image),
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp)),
