@@ -35,7 +35,7 @@
     <string name="second_stage">Second Stage</string>
     <string name="unknown_stage">Unknown Stage</string>
 
-    <string name="launch_before_start_description">Move your phone up to launch the rocket</string>
+    <string name="launch_before_start_description">Tilt your phone up to launch the rocket</string>
     <string name="launch_successful">Launch successful!</string>
 
     <string name="first_flight_format">First flight: %1$s</string>
