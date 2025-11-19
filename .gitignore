@@ -1,0 +1,59 @@
+############################################
+# Kotlin Multiplatform / Gradle
+############################################
+# Gradle build directories
+.gradle/
+**/.gradle/
+
+# Build directories
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+
+
+############################################
+# IntelliJ / Android Studio
+############################################
+.idea/
+*.iml
+*.ipr
+*.iws
+
+############################################
+# Android
+############################################
+local.properties
+captures/
+*.jks
+*.keystore
+
+############################################
+# iOS (Xcode)
+############################################
+iosApp/Pods/
+iosApp/DerivedData/
+iosApp/**/*.xcuserstate
+iosApp/**/*.xcuserdata/
+iosApp/**/*.xcworkspace/xcuserdata/
+iosApp/**/*.xcworkspace/xcshareddata/
+iosApp/**/*.pbxuser
+iosApp/**/*.mode1v3
+iosApp/**/*.mode2v3
+iosApp/**/*.perspectivev3
+
+############################################
+# Kotlin Tooling
+############################################
+.kotlin/
+
+############################################
+# OS-specific files
+############################################
+.DS_Store
+Thumbs.db
+
+############################################
+# Logs
+############################################
+*.log
